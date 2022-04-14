@@ -30,7 +30,7 @@ public class MarkdownParse {
             }
             
             currentIndex = closeParen + 1;
-            //System.out.println(openBracket + " " + closeBracket + " " + openParen + " " + closeParen);
+            
             
         }
 
