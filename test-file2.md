@@ -1,11 +1,6 @@
-[]()
-[](test-file.md)
+# Title
 
-[](
-)
-[](this probs is not a link)
-[]
-(This is also not a link)
-[]
+[a link!](https://something.com)
+[another link!](some-page.html)
 
-(test-file.md
+some paragraph text after the links
