@@ -99,5 +99,10 @@ public class MarkdownParseTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test 
+    public void Test9() throws IOException{
+        assertEquals(3 + 3, 5);
+    }
 }
 
