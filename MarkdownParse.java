@@ -26,7 +26,11 @@ public class MarkdownParse {
             if(openBracket == -1 || closeParen == -1){
                 break;
             }
-            
+            if(openBracket - 1 == markdown.indexOf("!")){
+                currentIndex = closeParen + 1;
+                continue;
+            }
+
             if (markdown.substring(openParen + 1, closeParen).length() != 0 &&
                 markdown.substring(closeBracket + 1, openParen).length() == 0 &&
                 !markdown.substring(openParen + 1, closeParen).contains("\n")

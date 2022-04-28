@@ -14,9 +14,10 @@ public class MarkdownParseTest {
 
     @Test
     public void Test1() throws IOException{
-        List expected = List.of("https://something.com","some-thing.html");
+        List expected = List.of("some-thing.html");
 
-        Path fileName = Path.of("test-file.md");
+        MarkdownParse mpObj = new MarkdownParse();
+        Path fileName = Path.of("/Users/sophia/Documents/GitHub/good-markdown-parser/test-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> actual = MarkdownParse.getLinks(content);
 
