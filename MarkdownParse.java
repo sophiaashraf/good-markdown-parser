@@ -26,6 +26,7 @@ public class MarkdownParse {
             if(openBracket == -1 || closeParen == -1){
                 break;
             }
+
             if(openBracket - 1 == markdown.indexOf("!")){
                 currentIndex = closeParen + 1;
                 continue;
@@ -37,12 +38,15 @@ public class MarkdownParse {
             ){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
+            
             currentIndex = closeParen + 1;  
         }
-
         return toReturn;
+        // going to commit this comment!!
+        // Show running git commands to commit and push a change to Github 
+        // while logged into your ieng6 account.
+        
     }
-
 
     public static void main(String[] args) throws IOException {
         Path fileName = Path.of(args[0]);
