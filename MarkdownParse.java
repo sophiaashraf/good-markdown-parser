@@ -38,6 +38,35 @@ public class MarkdownParse {
             ){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
+            // Backslash fix
+            if(openBracket > 0 && markdown.charAt(openBracket - 1) == '\\'){
+                currentIndex = openBracket + 1;
+                continue;
+                }   
+           
+            // Image reference fix
+           if (openBracket > 0 && markdown.charAt(openBracket - 1) == '!') {
+                currentIndex = closeParen + 1;
+                continue;
+                }
+            
+            // URL padding fix
+            String url = markdown.substring(openParen + 1, closeParen);
+            url = url.replaceAll("^ *", "");
+            url = url.replaceAll(" *$", "");
+            
+            if (url.split("\\n").length > 1) {
+                System.out.println(url.split("\\n").length);
+                currentIndex = closeParen + 1;
+                continue;
+                }
+            
+            // Ordering and space between title/url (test-file5.md)
+            if (closeBracket != openParen - 1) {
+                currentIndex = closeParen + 1;
+                continue;
+                }
+            toReturn.add(url);            
             
             currentIndex = closeParen + 1;  
         }
