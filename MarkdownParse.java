@@ -41,11 +41,8 @@ public class MarkdownParse {
             
             currentIndex = closeParen + 1;  
         }
-        return toReturn;
-        // going to commit this comment!!
-        // Show running git commands to commit and push a change to Github 
-        // while logged into your ieng6 account.
         
+        return toReturn;
     }
 
     public static void main(String[] args) throws IOException {
