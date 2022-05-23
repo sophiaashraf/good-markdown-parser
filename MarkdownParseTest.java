@@ -13,6 +13,19 @@ public class MarkdownParseTest {
         assertEquals(4,4);
     }
 
+    @Test
+    public void TestSnip1() throws IOException{
+        List expected = List.of("google.com");
+
+        Path fileName = Path.of("test-file9.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+
+        System.out.println("Snippet 1: " + actual);
+
+        assertEquals(expected, actual);
+    }
+
     // @Test
     // public void Test1() throws IOException{
     //     List expected = List.of("some-thing.html");
